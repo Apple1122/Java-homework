@@ -151,10 +151,10 @@ public class test {
 		
 		for(int i = 0; i < 50; i++)
 		{
-			rmse += Math.sqrt(Math.pow(predictValue[i] - actualValue[i], 2) / predictValue.length);
+			rmse += Math.pow(predictValue[i] - actualValue[i], 2) / predictValue.length;
 		}
 		
-		return rmse;
+		return Math.sqrt(rmse);
 	}
 	
 	
