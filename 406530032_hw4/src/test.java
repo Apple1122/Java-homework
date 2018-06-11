@@ -9,7 +9,11 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-
+/**
+ * 
+ * @author kylehuang
+ *
+ */
 public class test {
 
 	public static void main(String[] args) {
@@ -74,7 +78,12 @@ public class test {
 		}
 		
 	}
-	
+	/**
+	 * put data into matrix
+	 * @param path
+	 * @return
+	 * @throws IOException
+	 */
 	public static double[][] toMatrix(String path) throws IOException {
 		
 		double[][] matrix = null;
@@ -112,7 +121,12 @@ public class test {
 		
 		return matrix;
 	}
-	
+	/**
+	 * count matrix row number
+	 * @param path
+	 * @return
+	 * @throws IOException
+	 */
 	public static int countRowNumber(String path) throws IOException{
 		File file = new File(path);
 		Scanner sc = new Scanner(file);
@@ -132,7 +146,12 @@ public class test {
 		System.out.println(row);
 		return row;
 	}
-	
+	/**
+	 * calculate MAE
+	 * @param predictValue
+	 * @param actualValue
+	 * @return
+	 */
 	public static double MAE(double[] predictValue, double[] actualValue)
 	{
 		double mae = 0;
@@ -144,7 +163,12 @@ public class test {
 		
 		return mae / predictValue.length;
 	}
-	
+	/**
+	 * calculaute RMSE
+	 * @param predictValue
+	 * @param actualValue
+	 * @return
+	 */
 	public static double RMSE(double[] predictValue, double[] actualValue)
 	{
 		double rmse = 0;

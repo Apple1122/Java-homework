@@ -1,9 +1,16 @@
 import org.apache.commons.math3.stat.regression.*;
-
+/**
+ * 
+ * @author kylehuang
+ *
+ */
 public class regression {
 	 
 	private static double[] beta;
-	
+	/**
+	 * create regression
+	 * @param test
+	 */
 	public static void multipleRegression(double[][] test)
 	{
 		final  OLSMultipleLinearRegression regression = new OLSMultipleLinearRegression();
@@ -24,7 +31,11 @@ public class regression {
 		
 		beta = regression.estimateRegressionParameters();
 	}
-	
+	/**
+	 * predict the value
+	 * @param data
+	 * @return
+	 */
 	public static double[] predict(double[][] data)
 	{
 		double[] result = new double[data.length];
