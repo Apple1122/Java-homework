@@ -1,7 +1,9 @@
 
 public class Appointment {
 	public String description;
-	public int year, month, day;
+	public int year;
+	public int month;
+	public int day;
 	
 	Appointment(int year, int month, int day, String des)
 	{
