@@ -33,16 +33,9 @@ public class Appointment {
 		return this.description;
 	}
 	
-	public boolean occursOn(int year, int month, int day)
+	public static boolean occursOn(int year, int month, int day)
 	{
-		if(this.year != year)
-			return false;
-		if(this.month != month)
-			return false;
-		if(this.day != day)
-			return false;
-		
-		return true;
+		return false;
 	}
 	
 	
