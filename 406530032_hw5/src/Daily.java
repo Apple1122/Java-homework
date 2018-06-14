@@ -17,15 +17,22 @@ public class Daily extends Appointment{
 		{
 			for(Appointment de : del)
 			{
-				if(year > de.year)
-					return false;
-				else if(year == de.year)
+				//prevent if deleteAppointment has occurred before addAppointment
+				if(de.year >= d.year && de.month >= d.month)
 				{
-					if(month > de.month)
+					if(de.year == d.year && de.month == d.month && d.day >= de.day)
+						break;
+					
+					if(year > de.year)
 						return false;
-					else
-						if(day >= 28)
+					else if(year == de.year)
+					{
+						if(month > de.month)
 							return false;
+						else if(month == de.month)
+							if(day >= de.day)
+								return false;
+					}
 				}
 			}
 			
