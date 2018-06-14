@@ -21,7 +21,7 @@ public class Onetime extends Appointment{
 	
 	public static String showDescription(int year, int month, int day)
 	{
-		String des = null;
+		String des = "";
 		
 		for(Onetime d1 : app)
 			if(d1.occursOn(d1.year, d1.month, d1.day))
