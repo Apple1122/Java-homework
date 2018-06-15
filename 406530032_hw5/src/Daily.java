@@ -20,8 +20,8 @@ public class Daily extends Appointment{
 				//prevent if deleteAppointment has occurred before addAppointment
 				if(de.year >= d.year && de.month >= d.month)
 				{
-					if(de.year == d.year && de.month == d.month && d.day >= de.day)
-						break;
+//					if(de.year == d.year && de.month == d.month && d.day >= de.day)
+//						break;
 					
 					if(year > de.year)
 						return false;
@@ -36,8 +36,12 @@ public class Daily extends Appointment{
 				}
 			}
 			
-			if(d.year == year)
+			if(d.year == year && d.month == month && d.day < day)
 				return true;
+			
+			if(d.year == year && d.month < month)
+				return true;
+			
 		}
 		return false;
 	}

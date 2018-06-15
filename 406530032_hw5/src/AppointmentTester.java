@@ -14,7 +14,8 @@ public class AppointmentTester {
 		addAppointment(2018, 4, 3, "hello", "M");
 		addAppointment(2018, 4, 3, "Onetime", "O");
 		deleteAppointment(2018, 3, 4, appointment);
-		displayAppointment(2018, 3, 27, 2019, 3, 28);
+		deleteAppointment(2018, 4, 4, appointment);
+		displayAppointment(2018, 3, 26, 2019, 3, 28);
 		
 		
 	}
