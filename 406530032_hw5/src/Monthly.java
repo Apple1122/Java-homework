@@ -17,10 +17,17 @@ public class Monthly extends Appointment{
 		{
 			for(Appointment de : del)
 			{
-				if(de.year < year)
-					return false;
-				if(de.year <= year && de.month <= month)
-					return false;
+				if(de.year >= d.year && de.month >= d.month)
+				{
+					//when delete list have occur on any Monthly Appointment 
+					if(d.year == de.year && d.day == de.day) 
+					{
+						if(de.year < year)
+							return false;
+						if(de.year <= year && de.month <= month)
+							return false;
+					}
+				}
 			}
 
 			if(d.day == day && d.year == year)
@@ -31,7 +38,7 @@ public class Monthly extends Appointment{
 
 	public static String showDescription(int year, int month, int day)
 	{
-		String des = null;
+		String des = "";
 		
 		for(Monthly d1 : app)
 			if(d1.occursOn(d1.year, d1.month, d1.day))

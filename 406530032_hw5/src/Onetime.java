@@ -21,7 +21,7 @@ public class Onetime extends Appointment{
 	
 	public static String showDescription(int year, int month, int day)
 	{
-		String des = null;
+		String des = "";
 		
 		for(Onetime d1 : app)
 			if(d1.occursOn(d1.year, d1.month, d1.day))
@@ -31,11 +31,17 @@ public class Onetime extends Appointment{
 	
 	public static void deleteApp(int y, int m, int d)
 	{
+		ArrayList<Onetime > temp = new ArrayList<Onetime>();
+				
 		for(Onetime del : app)
 		{
-			if(del.day == d && del.month == m && del.year == y)
-				app.remove(del);
+			if(del.day == d && del.month == m && del.year == y) ;
+			
+			else
+				temp.add(del);
 		}
 		
+		app.clear();
+		app = new ArrayList<Onetime>(temp);
 	}
 }

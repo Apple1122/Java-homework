@@ -17,20 +17,31 @@ public class Daily extends Appointment{
 		{
 			for(Appointment de : del)
 			{
-				if(year > de.year)
-					return false;
-				else if(year == de.year)
+				//prevent if deleteAppointment has occurred before addAppointment
+				if(de.year >= d.year && de.month >= d.month)
 				{
-					if(month > de.month)
+//					if(de.year == d.year && de.month == d.month && d.day >= de.day)
+//						break;
+					
+					if(year > de.year)
 						return false;
-					else
-						if(day >= 28)
+					else if(year == de.year)
+					{
+						if(month > de.month)
 							return false;
+						else if(month == de.month)
+							if(day >= de.day)
+								return false;
+					}
 				}
 			}
 			
-			if(d.year == year)
+			if(d.year == year && d.month == month && d.day < day)
 				return true;
+			
+			if(d.year == year && d.month < month)
+				return true;
+			
 		}
 		return false;
 	}
@@ -38,7 +49,7 @@ public class Daily extends Appointment{
 
 	public static String showDescription(int year, int month, int day)
 	{
-		String des = null;
+		String des = "";
 		
 		for(Daily d1 : app)
 			if(d1.occursOn(d1.year, d1.month, d1.day))
