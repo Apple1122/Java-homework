@@ -1,3 +1,4 @@
+package new_406530032_hw5;
 
 public class Appointment {
 	public String description;
@@ -6,12 +7,13 @@ public class Appointment {
 	public int day;
 	public String type;
 	
-	Appointment(int year, int month, int day, String des)
+	Appointment(int year, int month, int day, String des, String type)
 	{
 		this.year = year;
 		this.month = month;
 		this.day = day;
 		this.description = des;
+		this.type = type;
 	}
 	
 	public int getYear()

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 import javax.naming.ldap.Rdn;
 
-import sun.security.provider.JavaKeyStore.CaseExactJKS;
+
 
 public class AppointmentTester {
 	
@@ -10,11 +10,11 @@ public class AppointmentTester {
 		// TODO Auto-generated method stub
 		ArrayList<Appointment> appointment = new ArrayList<Appointment>();
 		
-		addAppointment(2018, 3, 28, "java appointment", "D");
-		addAppointment(2018, 4, 3, "hello", "M");
-		addAppointment(2018, 4, 3, "Onetime", "O");
-		deleteAppointment(2018, 3, 4, appointment);
-		deleteAppointment(2018, 4, 4, appointment);
+		appointment.add(addAppointment(2018, 3, 28, "java appointment", "D"));
+		appointment.add(addAppointment(2018, 4, 3, "hello", "M"));
+		appointment.add(addAppointment(2018, 4, 3, "Onetime", "O"));
+//		deleteAppointment(2018, 3, 4, appointment);
+//		deleteAppointment(2018, 4, 4, appointment);
 		displayAppointment(2018, 3, 26, 2019, 3, 28);
 		
 		
@@ -55,7 +55,7 @@ public class AppointmentTester {
 	 */
 	public static void displayAppointment(int sy, int sm, int sd, int ey, int em, int ed)
 	{
-		// first round: acount start day to judgeDay(sm)
+		// first round: account start day to judgeDay(sm)
 		for(int d = sd; d < judgeDay(sy, sm) || (d <= ed && sy == ey && sm == em); d++)
 		{
 			if(Onetime.occursOn(sy, sm, d))
@@ -128,11 +128,11 @@ public class AppointmentTester {
 		Monthly.deleteApp(y, m, d);
 	}
 	/**
-	 	公元年分除以4不可整除，為平年。
-		公元年分除以4可整除但除以100不可整除，為閏年。
-		公元年分除以100可整除但除以400不可整除，為平年。
-		公元年分除以400可整除但除以3200不可整除，為閏年。
-		公元年分除以3200可整除，為平年。
+	 	���僑��隞�4銝��嚗撟喳僑��
+		���僑��隞�4���雿隞�100銝��嚗��僑��
+		���僑��隞�100���雿隞�400銝��嚗撟喳僑��
+		���僑��隞�400���雿隞�3200銝��嚗��僑��
+		���僑��隞�3200���嚗撟喳僑��
 	 * @param y
 	 * @param m
 	 * @param d
