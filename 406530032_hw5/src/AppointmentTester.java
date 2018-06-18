@@ -43,6 +43,15 @@ public class AppointmentTester {
 			return app;
 		}
 	}
+	public static void displayAppointment(int sy, int sm, int d, ArrayList<Appointment> appointment)
+	{
+		if(Onetime.occursOn(sy, sm, d))
+			System.out.printf("%s : %4d %2d %2d\t%s\n","Onetime", sy, sm, d, Onetime.showDescription(sy, sm, d));
+		if(Daily.occursOn(sy, sm, d))
+			System.out.printf("%s : %4d %2d %2d\t%s\n","Daily", sy, sm, d, Daily.showDescription(sy, sm, d));
+		if(Monthly.occursOn(sy, sm, d))
+			System.out.printf("%s : %4d %2d %2d\t%s\n","Monthly", sy, sm, d, Monthly.showDescription(sy, sm, d));
+	}
 	/**
 	 * for loop have problem cannot run all year around, month around(1 ~ 12) and day around(1 ~ 30 or 31)
 	 * how to end at end date
