@@ -36,7 +36,7 @@ public class Daily extends Appointment{
 				}
 			}
 			
-			if(d.year == year && d.month == month && d.day =< day)
+			if(d.year == year && d.month == month && d.day <= day)
 				return true;
 			
 			if(d.year == year && d.month < month)
